@@ -2,18 +2,23 @@ import React from "react";
 import classNames from "classnames";
 import Icons from "./Icons";
 
-const Button = ({ theme, content, icons = false, ...rest }) => {
+const Button = ({ theme, icons = false, ...rest }) => {
+  const a_tailwind = "bg-black text-white";
+  const b_tailwind = "bg-slate-200 text-slate-600";
+  const c_tailwind = "text-gray-500";
+  const d_tailwind = "";
+
   const buttonThemes = classNames("flex justify-center py-2 px-4 rounded-md ", {
-    "bg-black text-white": theme === "a_blackButton",
-    "bg-white text-slate-400": theme === "b_grayButton",
-    "": theme === "c_lightButton",
-    "": theme === "d_navBarButtons",
+    [a_tailwind]: theme === "a_blackButton",
+    [b_tailwind]: theme === "b_grayButton",
+    [c_tailwind]: theme === "c_lightButton",
+    [d_tailwind]: theme === "d_navBarButtons",
   });
 
   return (
     <button className={buttonThemes}>
-      {icons && <Icons iconName={"chevron"} />}
-      {content}
+      {icons && <Icons iconName={icons} />}
+      {rest.content}
     </button>
   );
 };

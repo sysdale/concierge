@@ -1,22 +1,35 @@
 import React from "react";
-import { BsFillPencilFill, BsPlusLg } from "react-icons/bs";
+
+import {
+  BsBookmark,
+  BsBuilding,
+  BsChevronDown,
+  BsFillBellFill,
+  BsFillPencilFill,
+  BsFillPinMapFill,
+  BsGear,
+  BsPerson,
+  BsPlusLg,
+  BsFunnel,
+} from "react-icons/bs";
 
 const ICONS_LIST = {
   pencil: BsFillPencilFill,
   plus: BsPlusLg,
-  bell: null,
-  gear: null,
-  chevron: null,
-  pin: null,
-  bookmark: null,
-  building: null,
-  person: null,
+  bell: BsFillBellFill,
+  gear: BsGear,
+  chevron: BsChevronDown,
+  pin: BsFillPinMapFill,
+  bookmark: BsBookmark,
+  building: BsBuilding,
+  person: BsPerson,
+  filter: BsFunnel,
 };
 
 const Icons = ({ iconName }) => {
-  const IconComponent = ICONS_LIST[iconName];
+  const CurrentIcon = ICONS_LIST[iconName];
 
-  return <div>{IconComponent && <IconComponent />}</div>;
+  return <div className="pr-2 py-1">{CurrentIcon && <CurrentIcon />}</div>;
 };
 
 export default Icons;
