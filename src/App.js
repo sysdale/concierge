@@ -1,12 +1,14 @@
 import "./App.css";
 import Badge from "./components/Badge";
 import Button from "./components/Button";
+import Checkbox from "./components/Checkbox";
 import DropDownButton from "./components/DropDownButton";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ToggleButton from "./components/ToggleButton";
 
 function App() {
   return (
-    <div>
+    <div className={"font-display"}>
       <Button
         theme={"a_blackButton"}
         content={"New Booking"}
@@ -21,8 +23,21 @@ function App() {
       <Badge theme={"c"} content={"Active"} />
       <Badge theme={"d"} content={"Active"} />
 
-      <DropDownButton theme={"input"} />
-      <DropDownButton theme={"filter"} />
+      <DropDownButton
+        theme={"input"}
+        content={"Dropdown a"}
+        placeholder={"Refrigerators"}
+      />
+      <DropDownButton
+        theme={"filter"}
+        content={"Dropdown b"}
+        placeholder={"Air conditioner"}
+      />
+
+      <Checkbox content={"Electricity"} />
+      <Checkbox content={"Cold Water"} />
+
+      <ToggleButton content={"active"} />
     </div>
   );
 }
