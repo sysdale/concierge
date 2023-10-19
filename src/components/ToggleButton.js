@@ -1,19 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ToggleButton = ({ content }) => {
+const ToggleButton = ({
+  content = { trueMsg: "Active", falseMsg: "Inactive" },
+  theme = "",
+}) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const active_tw = "`flex items-center space-x-[6px] rounded py-2 px-[18px] ";
+  const button_tw1 =
+    "shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-black p-0.5";
+
+  const button_tw2 =
+    "shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-slate-300 p-0.5";
+
   return (
     <div>
-      <label className="relative inline-flex items-center mr-5 cursor-pointer">
+      <label>
         <input
-          id={content}
+          id={theme}
           type="checkbox"
-          value={content}
-          className="sr-only peer"
+          className="sr-only"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
         />
-        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-        <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
-          {content}
-        </span>
+        {theme === "black_white" && (
+          <div className={button_tw1}>
+            <span
+              className={`${active_tw} ${
+                !isChecked ? "text-black bg-white" : "text-white"
+              }`}
+            >
+              {content.trueMsg}
+            </span>
+            <span
+              className={`${active_tw} ${
+                isChecked ? "text-black bg-white" : "text-white"
+              }`}
+            >
+              {content.falseMsg}
+            </span>
+          </div>
+        )}
+
+        {theme === "red_green" && (
+          <div className={button_tw2}>
+            <span
+              className={`${active_tw} ${
+                !isChecked ? "text-black bg-green-400" : "text-black"
+              }`}
+            >
+              {content.trueMsg}
+            </span>
+            <span
+              className={`${active_tw} ${
+                isChecked ? "text-black bg-red-400" : "text-black"
+              }`}
+            >
+              {content.falseMsg}
+            </span>
+          </div>
+        )}
       </label>
     </div>
   );

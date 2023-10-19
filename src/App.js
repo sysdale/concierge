@@ -23,11 +23,7 @@ function App() {
       <Badge theme={"c"} content={"Active"} />
       <Badge theme={"d"} content={"Active"} />
 
-      <DropDownButton
-        theme={"input"}
-        content={"Dropdown a"}
-        placeholder={"Refrigerators"}
-      />
+      <DropDownButton content={"Dropdown a"} placeholder={"Refrigerators"} />
       <DropDownButton
         theme={"filter"}
         content={"Dropdown b"}
@@ -37,7 +33,12 @@ function App() {
       <Checkbox content={"Electricity"} />
       <Checkbox content={"Cold Water"} />
 
-      <ToggleButton content={"active"} />
+      <ToggleButton theme={"black_white"} />
+
+      <ToggleButton
+        content={{ trueMsg: "Enabled", falseMsg: "Disabled" }}
+        theme={"red_green"}
+      />
     </div>
   );
 }

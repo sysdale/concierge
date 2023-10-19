@@ -3,7 +3,7 @@ import React from "react";
 import Icons from "./Icons";
 
 const DropDownButton = ({
-  theme,
+  theme = "input",
   content,
   placeholder,
   width = 80,
