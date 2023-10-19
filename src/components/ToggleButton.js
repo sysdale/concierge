@@ -15,7 +15,7 @@ const ToggleButton = ({
     "shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-black p-0.5";
 
   const button_tw2 =
-    "shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-slate-300 p-0.5";
+    "shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-slate-100 p-0.5";
 
   return (
     <div>

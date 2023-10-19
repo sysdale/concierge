@@ -5,6 +5,7 @@ import Checkbox from "./components/Checkbox";
 import DropDownButton from "./components/DropDownButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ToggleButton from "./components/ToggleButton";
+import InputField from "./components/InputField";
 
 function App() {
   return (
@@ -34,11 +35,12 @@ function App() {
       <Checkbox content={"Cold Water"} />
 
       <ToggleButton theme={"black_white"} />
-
       <ToggleButton
         content={{ trueMsg: "Enabled", falseMsg: "Disabled" }}
         theme={"red_green"}
       />
+
+      <InputField title={"Site Name"} hasIcon canResize />
     </div>
   );
 }

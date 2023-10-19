@@ -11,6 +11,7 @@ import {
   BsPerson,
   BsPlusLg,
   BsFunnel,
+  BsSearch,
 } from "react-icons/bs";
 
 const ICONS_LIST = {
@@ -24,12 +25,18 @@ const ICONS_LIST = {
   building: BsBuilding,
   person: BsPerson,
   filter: BsFunnel,
+  search: BsSearch,
 };
 
-const Icons = ({ iconName }) => {
+const Icons = ({ iconName, content = null }) => {
   const CurrentIcon = ICONS_LIST[iconName];
 
-  return <div className="pr-2 py-1">{CurrentIcon && <CurrentIcon />}</div>;
+  return (
+    <div className="flex flex-row justify-between pr-2 py-1">
+      {CurrentIcon && <CurrentIcon />}
+      {content}
+    </div>
+  );
 };
 
 export default Icons;
