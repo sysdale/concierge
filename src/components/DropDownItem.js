@@ -1,0 +1,20 @@
+import React from "react";
+
+const DropDownItem = ({ data, itemSelector }) => {
+  const handleItemClick = (item) => {
+    itemSelector(item);
+  };
+
+  return (
+    <div>
+      {data.map((item, index) => (
+        <li key={index} className="hover:bg-sky-100 hover:text-black">
+          {console.log(item)}
+          <button onClick={() => handleItemClick(item)}>{item}</button>{" "}
+        </li>
+      ))}
+    </div>
+  );
+};
+
+export default DropDownItem;

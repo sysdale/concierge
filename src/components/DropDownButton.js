@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { useState } from "react";
 import Icons from "./Icons";
+import DropDownItem from "./DropDownItem";
 
 const DropDownButton = ({
   theme = "input",
@@ -10,9 +11,15 @@ const DropDownButton = ({
   data,
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("");
 
   const dropDownHandler = () => {
     setShowDropDown(!showDropDown);
+  };
+
+  const itemSelector = (item) => {
+    setSelectedItem(item);
+    console.log(item);
   };
 
   //tailwind part
@@ -21,7 +28,7 @@ const DropDownButton = ({
   const widthClass = `w-${width}`;
 
   const dropDownButtonThemes = classNames(
-    "flex justify-between py-0 px-4 space-x-2",
+    "flex justify-between py-1 px-4 space-x-2",
     {
       [filter_tw]: theme === "filter",
       [input_tw]: theme === "input",
@@ -36,25 +43,21 @@ const DropDownButton = ({
       <Icons iconName={"chevron"} />
     );
 
-  const listItems = data.map((item, index) => (
-    <li key={index} className="p-2">
-      {item}
-      <hr className="my-2 bg-gray-200" />
-    </li>
-  ));
-
   return (
     <div>
       <p className="text-sm font-semibold">{content}</p>
       <button onClick={dropDownHandler} className={dropDownButtonThemes}>
-        <div>{placeholder}</div>
+        <div>{selectedItem || placeholder}</div>
+
         <div>{whichIcon}</div>
       </button>
 
       {/* dropdown list items logic */}
       {showDropDown && (
-        <div className="bg-white border border-slate-200 py-1">
-          <ul>{listItems}</ul>
+        <div className="w-32 bg-white border border-slate-200">
+          <ul className="mb-0 pl-0">
+            <DropDownItem data={data} itemSelector={itemSelector} />
+          </ul>
         </div>
       )}
     </div>
