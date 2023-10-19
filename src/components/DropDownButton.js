@@ -11,12 +11,12 @@ const DropDownButton = ({
 }) => {
   //tailwind part
   const filter_tw = "bg-white text-black rounded-md border border-black p-3";
-  const input_tw = "pl-3 pr-8.5 bg-neutral-200";
+  const input_tw = "pl-3 pr-8.5 bg-neutral-200 rounded-md";
   const widthClass = "w-" + width;
   console.log(widthClass);
 
   const dropDownButtonThemes = classNames(
-    "flex py-0 px-4 justify-center ",
+    "flex py-0 px-4 justify-between",
     {
       [filter_tw]: theme === "filter",
       [input_tw]: theme === "input",
@@ -35,7 +35,7 @@ const DropDownButton = ({
     <div>
       <p className="font-bold text-sm">{title}</p>
       <button className={dropDownButtonThemes}>
-        <div className={width}>{defValue}</div>
+        <div className="">{defValue}</div>
         {whichIcon}
       </button>
     </div>
