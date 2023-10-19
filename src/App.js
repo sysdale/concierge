@@ -40,7 +40,7 @@ function App() {
         theme={"red_green"}
       />
 
-      <InputField title={"Site Name"} hasIcon canResize />
+      <InputField title={"Site Name"} />
     </div>
   );
 }

@@ -3,8 +3,8 @@ import Icons from "./Icons";
 
 const InputField = ({
   title,
-  width = 9,
-  height = 3,
+  width = 10,
+  height = 10,
   hasIcon = false,
   canResize = false,
 }) => {
@@ -16,11 +16,9 @@ const InputField = ({
   return (
     <div className="flex flex-col">
       <div>
-        <label id={title} className="font-semibold">
-          {title}
-        </label>
+        <label className="font-semibold">{title}</label>
       </div>
-      <div className="">
+      <div className="flex justify-between">
         <textarea
           className={inputField_tw}
           type="text"
