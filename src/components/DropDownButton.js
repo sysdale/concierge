@@ -6,17 +6,23 @@ const DropDownButton = ({
   theme,
   title = "Number of Rooms",
   defValue = "placeholder",
-  width = 1,
+  width = 80,
   data = undefined,
 }) => {
   //tailwind part
   const filter_tw = "bg-white text-black rounded-md border border-black p-3";
   const input_tw = "pl-3 pr-8.5 bg-neutral-200";
+  const widthClass = "w-" + width;
+  console.log(widthClass);
 
-  const dropDownButtonThemes = classNames("flex py-0 px-4 justify-center ", {
-    [filter_tw]: theme === "filter",
-    [input_tw]: theme === "input",
-  });
+  const dropDownButtonThemes = classNames(
+    "flex py-0 px-4 justify-center ",
+    {
+      [filter_tw]: theme === "filter",
+      [input_tw]: theme === "input",
+    },
+    [widthClass]
+  );
 
   const whichIcon =
     theme === "filter" ? (

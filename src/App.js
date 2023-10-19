@@ -22,6 +22,7 @@ function App() {
       <Badge theme={"d"} content={"Active"} />
 
       <DropDownButton theme={"input"} />
+      <DropDownButton theme={"filter"} />
     </div>
   );
 }
