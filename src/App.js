@@ -8,6 +8,7 @@ import ToggleButton from "./components/ToggleButton";
 import InputField from "./components/InputField";
 
 function App() {
+  const data = ["option1", "option2", "option3"];
   return (
     <div className={"font-display"}>
       <Button
@@ -24,11 +25,17 @@ function App() {
       <Badge theme={"c"} content={"Active"} />
       <Badge theme={"d"} content={"Active"} />
 
-      <DropDownButton content={"Dropdown a"} placeholder={"Refrigerators"} />
+      <DropDownButton
+        content={"Dropdown a"}
+        placeholder={"Refrigerators"}
+        data={data}
+      />
+
       <DropDownButton
         theme={"filter"}
         content={"Dropdown b"}
         placeholder={"Air conditioner"}
+        data={data}
       />
 
       <Checkbox content={"Electricity"} />

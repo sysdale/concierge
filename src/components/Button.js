@@ -2,11 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import Icons from "./Icons";
 
-const Button = ({ theme, icons = false, onClick = "", ...rest }) => {
+const Button = ({ theme, icons = false, onClick = false, ...rest }) => {
   const a_tailwind = "bg-black text-white";
   const b_tailwind = "bg-slate-200 text-slate-600";
   const c_tailwind = "text-gray-500";
-  const d_tailwind = "";
+  const d_tailwind = "border-solid border-b-4 border-black";
 
   const buttonThemes = classNames("flex justify-center py-2 px-4 rounded-md ", {
     [a_tailwind]: theme === "a_blackButton",
