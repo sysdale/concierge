@@ -9,7 +9,6 @@ const DropDownItem = ({ data, itemSelector }) => {
     <div>
       {data.map((item, index) => (
         <li key={index} className="hover:bg-sky-100 hover:text-black">
-          {console.log(item)}
           <button onClick={() => handleItemClick(item)}>{item}</button>{" "}
         </li>
       ))}

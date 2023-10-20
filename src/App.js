@@ -9,6 +9,7 @@ import InputField from "./components/InputField";
 
 function App() {
   const data = ["option1", "option2", "option3"];
+
   return (
     <div className={"font-display"}>
       <Button
@@ -48,6 +49,7 @@ function App() {
       />
 
       <InputField title={"Site Name"} />
+      <InputField title={"Hotel Name"} hasIcon canResize />
     </div>
   );
 }

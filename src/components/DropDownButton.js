@@ -19,12 +19,13 @@ const DropDownButton = ({
 
   const itemSelector = (item) => {
     setSelectedItem(item);
+    setShowDropDown(!showDropDown);
     console.log(item);
   };
 
   //tailwind part
   const filter_tw = "bg-white text-black rounded-md border border-black p-3";
-  const input_tw = "pl-3 pr-8.5 bg-neutral-200 rounded-md";
+  const input_tw = "pl-3 pr-8.5 bg-neutral-200 border border-black rounded-md";
   const widthClass = `w-${width}`;
 
   const dropDownButtonThemes = classNames(
@@ -48,7 +49,6 @@ const DropDownButton = ({
       <p className="text-sm font-semibold">{content}</p>
       <button onClick={dropDownHandler} className={dropDownButtonThemes}>
         <div>{selectedItem || placeholder}</div>
-
         <div>{whichIcon}</div>
       </button>
 

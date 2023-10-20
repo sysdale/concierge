@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ToggleButton = ({
   content = { trueMsg: "Active", falseMsg: "Inactive" },
-  theme = "",
+  theme = false,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
 
