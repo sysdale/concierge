@@ -18,11 +18,11 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
   };
 
   //tailwind part
-  const filter_tw = "bg-white text-black rounded-md border border-black p-3";
-  const input_tw = "pl-3 pr-8.5 bg-neutral-200 border border-black rounded-md";
+  const filter_tw = "bg-white text-black rounded-md border border-black";
+  const input_tw = "bg-neutral-200 border border-black rounded-md";
   const widthClass = `w-${width}`;
 
-  const dropDownButtonThemes = classNames("flex py-1 px-4 space-x-2", {
+  const dropDownButtonThemes = classNames("pl-3 py-1", {
     [filter_tw]: theme === "filter",
     [input_tw]: theme === "input",
   });
@@ -42,15 +42,15 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
           onClick={dropDownHandler}
           className={`${dropDownButtonThemes} ${widthClass}`}
         >
-          <div className="flex-row space-between">
-            <div>{selectedItem || placeholder}</div>
+          <div className="flex items-center">
+            <div className="pl-1 pr-5">{selectedItem || placeholder}</div>
             <div>{whichIcon}</div>
           </div>
         </button>
 
         {/* dropdown list items logic */}
         {showDropDown && (
-          <div className="flex bg-white border border-slate-200">
+          <div className="bg-white border border-slate-200">
             <ul className="mb-0 pl-0">
               <DropDownItem data={data} itemSelector={itemSelector} />
             </ul>
