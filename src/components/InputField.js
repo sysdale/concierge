@@ -3,8 +3,8 @@ import Icons from "./Icons";
 
 const InputField = ({
   title,
-  width = 5,
-  height = 5,
+  width = 6,
+  height = 6,
   hasIcon = false,
   canResize = false,
 }) => {

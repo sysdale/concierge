@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import Icons from "./Icons";
 
+//direction functionality
+
 const Button = ({ theme, icons = false, ...rest }) => {
   const a_tailwind = "bg-black text-white";
   const b_tailwind = "bg-slate-200 text-slate-600";

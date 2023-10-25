@@ -3,13 +3,7 @@ import React, { useState } from "react";
 import Icons from "./Icons";
 import DropDownItem from "./DropDownItem";
 
-const DropDownButton = ({
-  theme = "input",
-  content,
-  placeholder,
-  width = 80,
-  data,
-}) => {
+const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
 
@@ -28,14 +22,10 @@ const DropDownButton = ({
   const input_tw = "pl-3 pr-8.5 bg-neutral-200 border border-black rounded-md";
   const widthClass = `w-${width}`;
 
-  const dropDownButtonThemes = classNames(
-    "flex justify-between py-1 px-4 space-x-2",
-    {
-      [filter_tw]: theme === "filter",
-      [input_tw]: theme === "input",
-    },
-    [widthClass]
-  );
+  const dropDownButtonThemes = classNames("flex py-1 px-4 space-x-2", {
+    [filter_tw]: theme === "filter",
+    [input_tw]: theme === "input",
+  });
 
   const whichIcon =
     theme === "filter" ? (
@@ -45,21 +35,28 @@ const DropDownButton = ({
     );
 
   return (
-    <div>
-      <p className="text-sm font-semibold">{content}</p>
-      <button onClick={dropDownHandler} className={dropDownButtonThemes}>
-        <div>{selectedItem || placeholder}</div>
-        <div>{whichIcon}</div>
-      </button>
+    <div className="flex">
+      <div className="flex-col">
+        <p className="text-sm font-semibold">{placeholder}</p>
+        <button
+          onClick={dropDownHandler}
+          className={`${dropDownButtonThemes} ${widthClass}`}
+        >
+          <div className="flex-row space-between">
+            <div>{selectedItem || placeholder}</div>
+            <div>{whichIcon}</div>
+          </div>
+        </button>
 
-      {/* dropdown list items logic */}
-      {showDropDown && (
-        <div className="w-32 bg-white border border-slate-200">
-          <ul className="mb-0 pl-0">
-            <DropDownItem data={data} itemSelector={itemSelector} />
-          </ul>
-        </div>
-      )}
+        {/* dropdown list items logic */}
+        {showDropDown && (
+          <div className="flex bg-white border border-slate-200">
+            <ul className="mb-0 pl-0">
+              <DropDownItem data={data} itemSelector={itemSelector} />
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
