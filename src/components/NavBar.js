@@ -8,7 +8,7 @@ const NavBar = ({ data }) => {
   const iconsList = ["bell", "gear"];
 
   return (
-    <div className="py-2 h-19 px-4 flex justify-between items-center content-center border shadow-sm rounded-none shadow-white">
+    <div className="mb-4 py-2 h-19 px-4 flex justify-between items-center content-center border shadow-s rounded-none shadow-white">
       {/* Logo Area */}
       <div className="flex flex-row items-center ">
         <div className="flex items-center">
@@ -19,7 +19,7 @@ const NavBar = ({ data }) => {
         </div>
 
         {/* Tabs Area */}
-        <div className="flex items-center">
+        <div className="flex flex-row">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>

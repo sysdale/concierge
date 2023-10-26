@@ -2,10 +2,10 @@ import React from "react";
 
 const NavTabs = ({ tabsList }) => {
   return (
-    <div>
-      <ul className="flex">
+    <div className="border-solid border-2 ">
+      <ul>
         {tabsList.map((item, idx) => (
-          <button className="flex-row justify-between" key={idx}>
+          <button className="" key={idx}>
             {item}
           </button>
         ))}
