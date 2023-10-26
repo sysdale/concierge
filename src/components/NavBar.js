@@ -2,35 +2,32 @@ import React from "react";
 import Icons from "./Icons";
 import NavTabs from "./NavTabs";
 import DropDownButton from "./DropDownButton";
+import Button from "./Button";
 
 const NavBar = ({ data }) => {
-  const tabsList = ["My Sites", "Bookings", "Dashboard"];
+  const tabsList = ["Sites", "Bookings", "Dashboard"];
   const iconsList = ["bell", "gear"];
 
   return (
     <div className="mb-4 py-2 h-19 px-4 flex justify-between items-center content-center border shadow-s rounded-none shadow-white">
       {/* Logo Area */}
       <div className="flex flex-row items-center ">
-        <div className="flex items-center">
-          <button className="text-3xl">
-            <Icons iconName={"wallet"} />
-          </button>
+        <div className="flex items-center text-3xl pr-12">
+          <Button theme={"d_onlyIcon"} icons={"wallet"}></Button>
           <div className="text-lg font-semibold">Conseirge</div>
         </div>
 
         {/* Tabs Area */}
-        <div className="flex flex-row">
+        <div className="flex">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>
 
       <div className="flex items-center">
         {/* Icons Area */}
-        <div className="flex space-x-3 text-xl">
+        <div className="flex text-xl">
           {iconsList.map((item, idx) => (
-            <button key={idx}>
-              <Icons iconName={item} />
-            </button>
+            <Button key={idx} theme={"d_onlyIcon"} icons={item}></Button>
           ))}
         </div>
 
