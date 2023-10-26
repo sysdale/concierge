@@ -6,7 +6,7 @@ const DropDownItem = ({ data, itemSelector }) => {
   };
 
   return (
-    <div className="flex-row">
+    <div className="flex-row text-center">
       {data.map((item, index) => (
         <li key={index} className="hover:bg-sky-100 hover:text-black">
           <button onClick={() => handleItemClick(item)}>{item}</button>{" "}

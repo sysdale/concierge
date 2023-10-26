@@ -12,6 +12,7 @@ import {
   BsPlusLg,
   BsFunnel,
   BsSearch,
+  BsWalletFill,
 } from "react-icons/bs";
 
 const ICONS_LIST = {
@@ -26,6 +27,7 @@ const ICONS_LIST = {
   person: BsPerson,
   filter: BsFunnel,
   search: BsSearch,
+  wallet: BsWalletFill,
 };
 
 const Icons = ({ iconName, content = null }) => {

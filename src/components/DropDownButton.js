@@ -19,7 +19,7 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
 
   //tailwind part
   const filter_tw = "bg-white text-black rounded-md border border-black";
-  const input_tw = "bg-neutral-200 border border-black rounded-md";
+  const input_tw = "bg-[#F3F4F6FF] border border-black rounded-md";
   const widthClass = `w-${width}`;
 
   const dropDownButtonThemes = classNames("pl-3 py-1", {
@@ -50,7 +50,7 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
 
         {/* dropdown list items logic */}
         {showDropDown && (
-          <div className="bg-white border border-slate-200">
+          <div className="bg-white border border-slate-400">
             <ul className="mb-0 pl-0">
               <DropDownItem data={data} itemSelector={itemSelector} />
             </ul>

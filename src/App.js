@@ -6,12 +6,15 @@ import DropDownButton from "./components/DropDownButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ToggleButton from "./components/ToggleButton";
 import InputField from "./components/InputField";
+import NavBar from "./components/NavBar";
 
 function App() {
   const data = ["option1", "option2", "option3"];
 
   return (
-    <div className={"font-display"}>
+    <div className="font-poppins">
+      <NavBar />
+
       <Button
         theme={"a_blackButton"}
         content={"New Booking"}
@@ -19,7 +22,6 @@ function App() {
       />
       <Button theme={"b_grayButton"} content={"New Booking"} icons={"plus"} />
       <Button theme={"c_lightButton"} content={"New Booking"} />
-      <Button theme={"d_navBarButtons"} content={"New Booking"} />
 
       <Badge theme={"a"} content={"Active"} />
       <Badge theme={"b"} content={"Active"} />
