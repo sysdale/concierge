@@ -12,13 +12,14 @@ import {
   BsPlusLg,
   BsFunnel,
   BsSearch,
+  BsBell,
   BsWalletFill,
 } from "react-icons/bs";
 
 const ICONS_LIST = {
   pencil: BsFillPencilFill,
   plus: BsPlusLg,
-  bell: BsFillBellFill,
+  bell: BsBell,
   gear: BsGear,
   chevron: BsChevronDown,
   pin: BsFillPinMapFill,

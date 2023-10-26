@@ -1,34 +1,47 @@
 import React from "react";
 import Icons from "./Icons";
-import Button from "./Button";
 import NavTabs from "./NavTabs";
+import DropDownButton from "./DropDownButton";
 
-const NavBar = () => {
+const NavBar = ({ data }) => {
   const tabsList = ["My Sites", "Bookings", "Dashboard"];
+  const iconsList = ["bell", "gear"];
 
   return (
-    <div className="py-2 h-19 px-4 flex justify-between content-center border shadow-sm rounded-none shadow-white">
+    <div className="py-2 h-19 px-4 flex justify-between items-center content-center border shadow-sm rounded-none shadow-white">
       {/* Logo Area */}
-      <div className="flex items-center">
-        <div className="text-2xl">
-          <Icons iconName={"wallet"} />
+      <div className="flex flex-row items-center ">
+        <div className="flex items-center">
+          <button className="text-3xl">
+            <Icons iconName={"wallet"} />
+          </button>
+          <div className="text-lg font-semibold">Conseirge</div>
         </div>
-        <span className="text-lg">Conseirge</span>
+
+        {/* Tabs Area */}
+        <div className="flex items-center">
+          <NavTabs tabsList={tabsList} />
+        </div>
       </div>
 
-      {/* Tabs Area */}
-      <div className="flex">
-        <NavTabs tabsList={tabsList} />
-      </div>
+      <div className="flex items-center">
+        {/* Icons Area */}
+        <div className="flex space-x-3 text-xl">
+          {iconsList.map((item, idx) => (
+            <button key={idx}>
+              <Icons iconName={item} />
+            </button>
+          ))}
+        </div>
 
-      {/* Icons Area */}
-      <div>
-        <h2>Icons</h2>
-      </div>
-
-      {/* Profile Area */}
-      <div>
-        <h2>Profile</h2>
+        {/* Profile Area */}
+        <div className="pl-6">
+          <DropDownButton
+            data={data}
+            theme={"profile"}
+            placeholder={"My Profile"}
+          />
+        </div>
       </div>
     </div>
   );

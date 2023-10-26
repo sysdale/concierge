@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import Icons from "./Icons";
 import DropDownItem from "./DropDownItem";
 
-const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
+const DropDownButton = ({
+  theme = "input",
+  placeholder = "",
+  width = 10,
+  data = false,
+}) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
 
@@ -20,11 +25,13 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
   //tailwind part
   const filter_tw = "bg-white text-black rounded-md border border-black";
   const input_tw = "bg-[#F3F4F6FF] border border-black rounded-md";
+  const profile_tw = "bg-white";
   const widthClass = `w-${width}`;
 
   const dropDownButtonThemes = classNames("pl-3 py-1", {
     [filter_tw]: theme === "filter",
     [input_tw]: theme === "input",
+    [profile_tw]: theme === "profile",
   });
 
   const whichIcon =
@@ -37,13 +44,17 @@ const DropDownButton = ({ theme = "input", placeholder, width = 10, data }) => {
   return (
     <div className="flex">
       <div className="flex-col">
-        <p className="text-sm font-semibold">{placeholder}</p>
+        {theme !== "profile" && (
+          <p className="text-sm font-semibold">{placeholder}</p>
+        )}
         <button
           onClick={dropDownHandler}
           className={`${dropDownButtonThemes} ${widthClass}`}
         >
           <div className="flex items-center">
-            <div className="pl-1 pr-5">{selectedItem || placeholder}</div>
+            <div className="pl-1 pr-5 text-sm">
+              {selectedItem || placeholder}
+            </div>
             <div>{whichIcon}</div>
           </div>
         </button>

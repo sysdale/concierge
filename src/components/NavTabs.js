@@ -5,9 +5,9 @@ const NavTabs = ({ tabsList }) => {
     <div>
       <ul className="flex">
         {tabsList.map((item, idx) => (
-          <li className="flex-row" key={idx}>
+          <button className="flex-row justify-between" key={idx}>
             {item}
-          </li>
+          </button>
         ))}
       </ul>
     </div>

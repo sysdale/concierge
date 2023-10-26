@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="font-poppins">
-      <NavBar />
+      <NavBar data={data} />
 
       <Button
         theme={"a_blackButton"}
@@ -28,15 +28,10 @@ function App() {
       <Badge theme={"c"} content={"Active"} />
       <Badge theme={"d"} content={"Active"} />
 
-      <DropDownButton
-        content={"Dropdown a"}
-        placeholder={"Refrigerators"}
-        data={data}
-      />
+      <DropDownButton placeholder={"Refrigerators"} data={data} />
 
       <DropDownButton
         theme={"filter"}
-        content={"Dropdown b"}
         placeholder={"Air conditioner"}
         data={data}
       />
