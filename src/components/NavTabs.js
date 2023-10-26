@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const NavTabs = ({ tabsList }) => {
   const [buttonClicked, setButtonClicked] = useState([]);
-  const clicked_tw = "border-b-4 border-black";
+  const clicked_tw = "border-b-2 border-black";
 
   const clickHandler = (id) => {
     console.log(id);
