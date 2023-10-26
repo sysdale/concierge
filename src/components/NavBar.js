@@ -5,7 +5,11 @@ import DropDownButton from "./DropDownButton";
 import Button from "./Button";
 
 const NavBar = ({ data }) => {
-  const tabsList = ["Sites", "Bookings", "Dashboard"];
+  const tabsList = [
+    { id: "tab1", text: "Sites" },
+    { id: "tab2", text: "Bookings" },
+    { id: "tab3", text: "Dashboard" },
+  ];
   const iconsList = ["bell", "gear"];
 
   return (
