@@ -23,7 +23,7 @@ const NavBar = ({ data }) => {
         </div>
 
         {/* Tabs Area */}
-        <div className="flex relative">
+        <div className="flex">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>
