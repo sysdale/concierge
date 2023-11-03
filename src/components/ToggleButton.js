@@ -23,9 +23,6 @@ const ToggleButton = ({
     },
   };
 
-  const active_tw = "`flex items-center space-x-[6px] rounded py-2 px-[18px] ";
-  const button_tw = `shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md p-0.5 ${themeClasses[theme].bgClass}`;
-
   const themeData = themeClasses[theme];
 
   return (
@@ -38,10 +35,12 @@ const ToggleButton = ({
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        <div className={button_tw}>
+        <div
+          className={`shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md p-0.5 ${themeClasses[theme].bgClass}`}
+        >
           {/* true message */}
           <span
-            className={`${active_tw} ${
+            className={`${`flex items-center space-x-[6px] rounded py-2 px-[18px]`} ${
               !isChecked ? themeData.falseClass : themeData.trueClass
             }`}
           >
@@ -50,7 +49,7 @@ const ToggleButton = ({
 
           {/* false message */}
           <span
-            className={`${active_tw} ${
+            className={`${`flex items-center space-x-[6px] rounded py-2 px-[18px]`} ${
               isChecked ? themeData.falseClass : themeData.trueClass
             }`}
           >

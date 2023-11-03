@@ -11,7 +11,6 @@ const InputField = ({
   const widthClass = `w-${width}`;
   const heightClass = `h-${height}`;
   const resize = canResize ? "resize" : "resize-none";
-  const inputField_tw = `bg-slate-200 border border-slate-200 ${widthClass} ${heightClass} ${resize} py-0 px-3 rounded-md `;
 
   return (
     <div className="flex flex-col">
@@ -22,7 +21,7 @@ const InputField = ({
       </div>
       <div className="flex">
         <textarea
-          className={inputField_tw}
+          className={`bg-slate-200 border border-slate-200 ${widthClass} ${heightClass} ${resize} py-0 px-3 rounded-md `}
           type="text"
           id={title}
           name={title}

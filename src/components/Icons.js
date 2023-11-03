@@ -31,13 +31,12 @@ const ICONS_LIST = {
   wallet: BsYinYang,
 };
 
-const Icons = ({ iconName, content = null }) => {
+const Icons = ({ iconName }) => {
   const CurrentIcon = ICONS_LIST[iconName];
 
   return (
     <div className="flex flex-row justify-between pr-2 py-1">
-      {CurrentIcon && <CurrentIcon />}
-      {content}
+      {<CurrentIcon />}
     </div>
   );
 };

@@ -6,9 +6,15 @@ import DropDownButton from "./components/DropDownButton";
 import ToggleButton from "./components/ToggleButton";
 import InputField from "./components/InputField";
 import NavBar from "./components/NavBar";
+import { useState } from "react";
 
 function App() {
   const data = ["option1", "option2", "option3"];
+  const [checkboxStatus, setCheckboxStatus] = useState(false);
+
+  const handleCheckChange = (event) => {
+    setCheckboxStatus(event);
+  };
 
   return (
     <div className="font-poppins">
@@ -35,8 +41,8 @@ function App() {
         data={data}
       />
 
-      <Checkbox content={"Electricity"} />
-      <Checkbox content={"Cold Water"} />
+      <Checkbox onCheckBoxChange={handleCheckChange} content={"Electricity"} />
+      <Checkbox onCheckBoxChange={handleCheckChange} content={"Cold Water"} />
 
       <ToggleButton theme={"black_white"} />
       <ToggleButton

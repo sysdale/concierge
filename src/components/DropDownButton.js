@@ -5,9 +5,9 @@ import DropDownItem from "./DropDownItem";
 
 const DropDownButton = ({
   theme = "input",
-  placeholder = "",
+  placeholder = null,
   width = 10,
-  data = false,
+  data = null,
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");

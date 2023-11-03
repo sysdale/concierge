@@ -6,14 +6,15 @@ import Button from "./Button";
 
 const NavBar = ({ data }) => {
   const tabsList = [
-    { id: 3, text: "Sites" },
-    { id: 5, text: "Bookings" },
-    { id: 6, text: "Dashboard" },
+    { id: 0, text: "Sites" },
+    { id: 1, text: "Bookings" },
+    { id: 2, text: "Dashboard" },
   ];
+
   const iconsList = ["bell", "gear"];
 
   return (
-    <div className="mb-4 py-2 px-4 flex justify-between items-center content-center border shadow-s rounded-none shadow-white">
+    <div className="mb-4 py-2 px-4 flex justify-between items-center content-center border shadow-s rounded-none shadow-white relative">
       {/* Logo Area */}
       <div className="flex flex-row items-center">
         <div className="flex items-center text-3xl pr-12">
@@ -22,7 +23,7 @@ const NavBar = ({ data }) => {
         </div>
 
         {/* Tabs Area */}
-        <div className="flex">
+        <div className="flex relative">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>
