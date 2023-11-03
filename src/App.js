@@ -3,7 +3,6 @@ import Badge from "./components/Badge";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
 import DropDownButton from "./components/DropDownButton";
-import "bootstrap/dist/css/bootstrap.min.css";
 import ToggleButton from "./components/ToggleButton";
 import InputField from "./components/InputField";
 import NavBar from "./components/NavBar";

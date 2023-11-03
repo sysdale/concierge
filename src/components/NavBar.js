@@ -6,9 +6,9 @@ import Button from "./Button";
 
 const NavBar = ({ data }) => {
   const tabsList = [
-    { id: "tab1", text: "Sites" },
-    { id: "tab2", text: "Bookings" },
-    { id: "tab3", text: "Dashboard" },
+    { id: 3, text: "Sites" },
+    { id: 5, text: "Bookings" },
+    { id: 6, text: "Dashboard" },
   ];
   const iconsList = ["bell", "gear"];
 

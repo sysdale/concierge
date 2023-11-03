@@ -5,10 +5,11 @@ const NavTabs = ({ tabsList }) => {
   const clicked_tw = "border-b-2 border-black";
 
   const clickHandler = (id) => {
-    console.log(id);
+    //console.log(id);
     setButtonClicked((prevState) => {
       const updatedButtons = [...prevState];
       updatedButtons[id] = !updatedButtons[id];
+      console.log(updatedButtons);
       return updatedButtons;
     });
   };
