@@ -1,40 +1,15 @@
 import React from "react";
-
-import {
-  BsBookmark,
-  BsBuilding,
-  BsChevronDown,
-  BsFillBellFill,
-  BsFillPencilFill,
-  BsFillPinMapFill,
-  BsGear,
-  BsPerson,
-  BsPlusLg,
-  BsFunnel,
-  BsSearch,
-  BsBell,
-  BsYinYang,
-} from "react-icons/bs";
+import { UserOutlined, AndroidOutlined } from "@ant-design/icons";
 
 const ICONS_LIST = {
-  pencil: BsFillPencilFill,
-  plus: BsPlusLg,
-  bell: BsBell,
-  gear: BsGear,
-  chevron: BsChevronDown,
-  pin: BsFillPinMapFill,
-  bookmark: BsBookmark,
-  building: BsBuilding,
-  person: BsPerson,
-  filter: BsFunnel,
-  search: BsSearch,
-  logo: BsYinYang,
+  logo: <AndroidOutlined />,
+  user: <UserOutlined />,
 };
 
 const Icons = ({ iconName }) => {
   const CurrentIcon = ICONS_LIST[iconName];
 
-  return iconName && <CurrentIcon />;
+  return iconName && CurrentIcon;
 };
 
 export default Icons;

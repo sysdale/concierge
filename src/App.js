@@ -1,11 +1,6 @@
 import "./App.css";
-import {
-  DropDownButton,
-  ToggleButton,
-  NavBar,
-  Buttonn,
-  InputField,
-} from "./components/index";
+import { dropData, tagData } from "./components/data/data";
+import { NavBar, Buttonn, InputField } from "./components/index";
 
 import { useState } from "react";
 
@@ -41,31 +36,47 @@ function App() {
       </Buttonn>
       <Buttonn theme="disabled">Disabled</Buttonn>
 
-      <DropDownButton
-        onDropDownChange={handleDropDownChange}
-        placeholder={"Refrigerators"}
-        data={data}
-      />
-
-      <DropDownButton
-        theme={"filter"}
-        placeholder={"Air conditioner"}
-        data={data}
-      />
-
-      <ToggleButton theme={"black_white"} />
-      <ToggleButton
-        content={{ trueMsg: "Enabled", falseMsg: "Disabled" }}
-        theme={"red_green"}
-      />
-
       <InputField
         placeholder={"Mayfair"}
         iconDirection={"left"}
-        iconName={"UserOutlined"}
-        type={""}
+        iconName={"user"}
+        type={"textarea"}
       >
         Site Name
+      </InputField>
+
+      <InputField
+        placeholder={"Something"}
+        iconDirection={"right"}
+        iconName={"logo"}
+        type={"text"}
+      >
+        Site Area
+      </InputField>
+
+      <InputField
+        placeholder={"nothing"}
+        iconDirection={"left"}
+        iconName={"logo"}
+        type={"number"}
+      >
+        Rooms
+      </InputField>
+
+      <InputField placeholder={"choose date"} type={"date"}>
+        Date Picker
+      </InputField>
+
+      <InputField type={"tag"} tagData={tagData} placeholder={"select a site"}>
+        Choose Tags
+      </InputField>
+
+      <InputField
+        type={"dropdown"}
+        defaultValue={"choose date"}
+        dropData={dropData}
+      >
+        Choose Drop Menu
       </InputField>
     </div>
   );

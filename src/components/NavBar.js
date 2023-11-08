@@ -1,10 +1,10 @@
 import React from "react";
 import Icons from "./Icons";
 import NavTabs from "./NavTabs";
-import DropDownButton from "./DropDownButton";
 import Buttonn from "./Buttonn";
 import BookingSvg from "./SVGs/BookingSvg";
 import SitesSvg from "./SVGs/SitesSvg";
+import DropDownField from "./DropDownField";
 
 const NavBar = ({ data }) => {
   const tabsList = [
@@ -36,11 +36,7 @@ const NavBar = ({ data }) => {
 
         {/* Profile Area */}
         <div className="pl-6">
-          <DropDownButton
-            data={data}
-            theme={"profile"}
-            placeholder={"My Profile"}
-          />
+          <DropDownField placeholder={"My Profile"} />
         </div>
       </div>
     </div>
