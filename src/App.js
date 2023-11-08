@@ -62,7 +62,7 @@ function App() {
       <InputField
         placeholder={"Mayfair"}
         iconDirection={"left"}
-        icon={""}
+        iconName={"UserOutlined"}
         type={""}
       >
         Site Name

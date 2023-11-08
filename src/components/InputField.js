@@ -9,15 +9,23 @@ const InputField = ({
   type = null,
   ...props
 }) => {
+  const fieldToken = {};
+
   return (
     <div className="flex flex-col">
       <div className="text-sm font-normal pb-2.5">{props.children}</div>
       {console.log(icon)}
-      <Input
-        placeholder={placeholder}
-        prefix={icon && <UserOutlined />}
-        type={type}
-      />
+      <ConfigProvider
+        theme={{
+          token: fieldToken,
+        }}
+      >
+        <Input
+          placeholder={placeholder}
+          prefix={<UserOutlined />}
+          type={type}
+        />
+      </ConfigProvider>
     </div>
   );
 };

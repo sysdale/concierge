@@ -7,3 +7,4 @@ export { default as NavBar } from "./NavBar";
 export { default as Table } from "./Table";
 export { default as ToggleButton } from "./ToggleButton";
 export { default as InputField } from "./InputField";
+export { default as Icons } from "./Icons";

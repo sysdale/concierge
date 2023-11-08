@@ -34,11 +34,7 @@ const ICONS_LIST = {
 const Icons = ({ iconName }) => {
   const CurrentIcon = ICONS_LIST[iconName];
 
-  return (
-    <div className="flex flex-row justify-between pr-2 py-1">
-      {<CurrentIcon />}
-    </div>
-  );
+  return iconName && <CurrentIcon />;
 };
 
 export default Icons;
