@@ -28,7 +28,7 @@ const ICONS_LIST = {
   person: BsPerson,
   filter: BsFunnel,
   search: BsSearch,
-  wallet: BsYinYang,
+  logo: BsYinYang,
 };
 
 const Icons = ({ iconName }) => {

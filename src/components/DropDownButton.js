@@ -5,12 +5,13 @@ import DropDownItem from "./DropDownItem";
 
 const DropDownButton = ({
   theme = "input",
-  placeholder = null,
   width = null,
+  placeholder = null,
+  onDropDownChange,
   data = null,
 }) => {
-  const [showDropDown, setShowDropDown] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("");
+  const [showDropDown, setShowDropDown] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const dropDownHandler = () => {
     setShowDropDown(!showDropDown);
@@ -19,19 +20,16 @@ const DropDownButton = ({
   const itemSelector = (item) => {
     setSelectedItem(item);
     setShowDropDown(!showDropDown);
-    console.log(item);
+    onDropDownChange(item);
   };
 
   //tailwind part
-  const filter_tw = "bg-white text-black rounded-md border border-black";
-  const input_tw = "bg-[#F3F4F6FF] border border-black rounded-md";
-  const profile_tw = "bg-white";
   const widthClass = `w-${width}`;
 
-  const dropDownButtonThemes = classNames("pl-3 py-1", {
-    [filter_tw]: theme === "filter",
-    [input_tw]: theme === "input",
-    [profile_tw]: theme === "profile",
+  const dropDownButtonThemes = classNames("pl-3 py-1 ", {
+    "bg-white text-black rounded-md border border-black ": theme === "filter",
+    "bg-[#F3F4F6FF] border border-black rounded-md": theme === "input",
+    "": theme === "profile",
   });
 
   const whichIcon =
@@ -41,12 +39,14 @@ const DropDownButton = ({
       <Icons iconName={"chevron"} />
     );
 
+  const placeHolderText = theme !== "profile" && (
+    <p className="text-sm font-semibold">{placeholder}</p>
+  );
+
   return (
     <div className="flex">
       <div className="flex-col">
-        {theme !== "profile" && (
-          <p className="text-sm font-semibold">{placeholder}</p>
-        )}
+        {placeHolderText}
         <button
           onClick={dropDownHandler}
           className={`${dropDownButtonThemes} ${widthClass}`}

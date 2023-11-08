@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useState } from "react";
 
 const ToggleButton = ({
@@ -23,7 +24,14 @@ const ToggleButton = ({
     },
   };
 
+  const toggleBg = classNames(
+    "flex items-center space-x-[6px] rounded py-2 px-[18px]"
+  );
+
   const themeData = themeClasses[theme];
+
+  const trueSpan = !isChecked ? themeData.falseClass : themeData.trueClass;
+  const falseSpan = isChecked ? themeData.falseClass : themeData.trueClass;
 
   return (
     <div>
@@ -36,25 +44,13 @@ const ToggleButton = ({
           onChange={handleCheckboxChange}
         />
         <div
-          className={`shadow-card relative inline-flex cursor-pointer select-none items-center justify-center rounded-md p-0.5 ${themeClasses[theme].bgClass}`}
+          className={`shadow-card inline-flex cursor-pointer select-none items-center justify-center rounded-md p-0.5 ${themeClasses[theme].bgClass}`}
         >
           {/* true message */}
-          <span
-            className={`${`flex items-center space-x-[6px] rounded py-2 px-[18px]`} ${
-              !isChecked ? themeData.falseClass : themeData.trueClass
-            }`}
-          >
-            {content.trueMsg}
-          </span>
+          <span className={`${toggleBg} ${trueSpan}`}>{content.trueMsg}</span>
 
           {/* false message */}
-          <span
-            className={`${`flex items-center space-x-[6px] rounded py-2 px-[18px]`} ${
-              isChecked ? themeData.falseClass : themeData.trueClass
-            }`}
-          >
-            {content.falseMsg}
-          </span>
+          <span className={`${toggleBg} ${falseSpan}`}>{content.falseMsg}</span>
         </div>
       </label>
     </div>
