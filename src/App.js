@@ -59,8 +59,14 @@ function App() {
         theme={"red_green"}
       />
 
-      <InputField title={"Site Name"} />
-      <InputField title={"Hotel Name"} />
+      <InputField
+        placeholder={"Mayfair"}
+        iconDirection={"left"}
+        icon={""}
+        type={""}
+      >
+        Site Name
+      </InputField>
     </div>
   );
 }

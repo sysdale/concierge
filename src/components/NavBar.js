@@ -2,7 +2,7 @@ import React from "react";
 import Icons from "./Icons";
 import NavTabs from "./NavTabs";
 import DropDownButton from "./DropDownButton";
-import Button from "./Buttonn";
+import Buttonn from "./Buttonn";
 import BookingSvg from "./SVGs/BookingSvg";
 import SitesSvg from "./SVGs/SitesSvg";
 
@@ -16,8 +16,8 @@ const NavBar = ({ data }) => {
     <div className="mb-4 px-4 flex justify-between items-center content-center bg-black text-[#D9D9D9] font-semibold text-base relative">
       {/* Logo Area */}
       <div className="flex flex-row items-center ">
-        <div className="flex items-center text-3xl pr-12 text-black">
-          <Button theme={"d_onlyIcon"} icons={"logo"}></Button>
+        <div className="flex items-center text-3xl px-10">
+          <Icons iconName="logo" />
         </div>
 
         {/* Tabs Area */}
