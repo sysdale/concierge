@@ -1,28 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
+
+import { ConfigProvider, Tabs } from "antd";
+import { tab } from "@testing-library/user-event/dist/tab";
 
 const NavTabs = ({ tabsList }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const onClickHandler = (id) => setActiveTab(id);
+  const onChange = (key) => {
+    console.log(key);
+  };
 
   return (
-    <div className="flex space-x-4">
-      {tabsList.map((tab) => (
-        <div key={tab.id}>
-          <button
-            className={`py-6 px-2 ${
-              activeTab === tab.id ? "border-b-4 border-white " : ""
-            }`}
-            onClick={() => onClickHandler(tab.id)}
-          >
-            <div className="flex items-center gap-3">
-              <svg className="w-4 h-4">{tab.svg}</svg>
-              <span>{tab.text}</span>
-            </div>
-          </button>
-        </div>
-      ))}
-    </div>
+    <ConfigProvider
+      theme={{
+        token: {
+          itemColor: "white",
+          itemHoverColor: "white",
+          itemSelectedColor: "white",
+        },
+      }}
+    >
+      <Tabs
+        onChange={onChange}
+        items={tabsList.map((tab) => {
+          return {
+            label: (
+              <span>
+                {tab.svg}
+                {tab.label}
+              </span>
+            ),
+            key: tab.id,
+          };
+        })}
+      />
+    </ConfigProvider>
   );
 };
 

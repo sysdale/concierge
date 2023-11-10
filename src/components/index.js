@@ -2,6 +2,7 @@ export { default as Checkbox } from "./Checkbox";
 export { default as Badge } from "./Badge";
 export { default as Buttonn } from "./Buttonn";
 export { default as NavBar } from "./NavBar";
+export { default as NavTabs } from "./NavTabs";
 export { default as Table } from "./Table";
 export { default as ToggleButton } from "./ToggleButton";
 export { default as InputField } from "./InputField";
@@ -11,6 +12,8 @@ export { default as DatePickerField } from "./DatePickerField";
 export { default as TextAreaField } from "./TextAreaField";
 export { default as NumberField } from "./NumberField";
 export { default as TagField } from "./TagField";
+export { default as StepsBar } from "./StepsBar";
+export { default as Cardd } from "./Cardd";
 
 {
   /* <ToggleButton theme={"black_white"} />

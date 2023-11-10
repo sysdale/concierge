@@ -13,10 +13,12 @@ const { TextArea } = Input;
 
 const InputField = ({
   placeholder,
+  type = "text",
   iconName = null,
   iconDirection = null,
   defaultValue = null,
-  type = "text",
+  bordered = true,
+  navbar = false,
   ...props
 }) => {
   const fieldToken = {};
@@ -34,8 +36,14 @@ const InputField = ({
     textarea: <TextAreaField placeholder={placeholder} autosize={true} />,
     number: <NumberField min={0} defaultValue={0} />,
     date: <DatePickerField />,
-    tag: <TagField tagData={props.tagData} placeholder={placeholder} />,
-    dropdown: <DropDownField defaultValue={defaultValue} />,
+    tag: <TagField w={props.tagData} placeholder={placeholder} />,
+    dropdown: (
+      <DropDownField
+        defaultValue={defaultValue}
+        dropData={props.dropData}
+        navbar={navbar}
+      />
+    ),
   };
 
   return (

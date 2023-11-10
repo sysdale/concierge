@@ -1,15 +1,12 @@
 import React from "react";
-import Icons from "./Icons";
-import NavTabs from "./NavTabs";
-import Buttonn from "./Buttonn";
 import BookingSvg from "./SVGs/BookingSvg";
 import SitesSvg from "./SVGs/SitesSvg";
-import DropDownField from "./DropDownField";
+import { DropDownField, Buttonn, NavTabs, InputField, Icons } from "./index";
 
 const NavBar = ({ data }) => {
   const tabsList = [
-    { id: 0, text: "My Sites", svg: <BookingSvg /> },
-    { id: 1, text: "Bookings", svg: <SitesSvg /> },
+    { id: 0, label: "My Sites", svg: <BookingSvg /> },
+    { id: 1, label: "Bookings", svg: <SitesSvg /> },
   ];
 
   return (
@@ -21,23 +18,18 @@ const NavBar = ({ data }) => {
         </div>
 
         {/* Tabs Area */}
-        <div className="flex ">
+        <div className="flex pl-3.5">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>
 
-      <div className="flex items-center">
-        {/* Icons Area */}
-        <div className="flex text-xl">
-          {/* {iconsList.map((item, idx) => (
-            <Button key={idx} theme={"d_onlyIcon"} icons={item}></Button>
-          ))} */}
-        </div>
-
-        {/* Profile Area */}
-        <div className="pl-6">
-          <DropDownField placeholder={"My Profile"} />
-        </div>
+      {/* Profile Area */}
+      <div className="pl-6">
+        <InputField
+          defaultValue={"My Profile"}
+          type={"dropdown"}
+          navbar={true}
+        />
       </div>
     </div>
   );

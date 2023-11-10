@@ -15,10 +15,6 @@ const Buttonn = ({ theme, icons = null, onClick, ...props }) => {
     },
   };
 
-  const buttonToken = {
-    colorPrimary: "#363636",
-  };
-
   const [buttonState, setButtonState] = useState(null);
 
   const onSaveHandler = (event) => {
@@ -30,7 +26,9 @@ const Buttonn = ({ theme, icons = null, onClick, ...props }) => {
   return (
     <ConfigProvider
       theme={{
-        token: buttonToken,
+        token: {
+          colorPrimary: "#363636",
+        },
       }}
     >
       <Button

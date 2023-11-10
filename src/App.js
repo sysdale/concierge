@@ -1,6 +1,12 @@
 import "./App.css";
 import { dropData, tagData } from "./components/data/data";
-import { NavBar, Buttonn, InputField } from "./components/index";
+import {
+  Cardd,
+  NavBar,
+  Buttonn,
+  InputField,
+  StepsBar,
+} from "./components/index";
 
 import { useState } from "react";
 
@@ -78,6 +84,9 @@ function App() {
       >
         Choose Drop Menu
       </InputField>
+
+      <StepsBar />
+      <Cardd />
     </div>
   );
 }
