@@ -10,7 +10,7 @@ const NavBar = ({ data }) => {
   ];
 
   return (
-    <div className="mb-4 px-4 flex justify-between items-center content-center bg-black text-[#D9D9D9] font-semibold text-base relative">
+    <div className="mb-4 px-4 flex justify-between items-center content-center bg-black text-[#D9D9D9] font-semibold text-base">
       {/* Logo Area */}
       <div className="flex flex-row items-center ">
         <div className="flex items-center text-3xl px-10">
@@ -18,7 +18,7 @@ const NavBar = ({ data }) => {
         </div>
 
         {/* Tabs Area */}
-        <div className="flex pl-3.5">
+        <div className="flex">
           <NavTabs tabsList={tabsList} />
         </div>
       </div>

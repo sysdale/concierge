@@ -11,10 +11,13 @@ const NavTabs = ({ tabsList }) => {
   return (
     <ConfigProvider
       theme={{
-        token: {
-          itemColor: "white",
-          itemHoverColor: "white",
-          itemSelectedColor: "white",
+        components: {
+          Tabs: {
+            itemColor: "#D9D9D9",
+            itemSelectedColor: "white",
+            itemHoverColor: "white",
+            inkBarColor: "white",
+          },
         },
       }}
     >
@@ -23,10 +26,12 @@ const NavTabs = ({ tabsList }) => {
         items={tabsList.map((tab) => {
           return {
             label: (
-              <span>
-                {tab.svg}
-                {tab.label}
-              </span>
+              <div className="flex">
+                <div className="flex items-center space-x-2">
+                  <div>{tab.svg}</div>
+                  <div>{tab.label}</div>
+                </div>
+              </div>
             ),
             key: tab.id,
           };
