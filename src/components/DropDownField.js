@@ -28,12 +28,11 @@ const DropDownField = ({ defaultValue, navbar, data }) => {
       }}
     >
       <Select
-        style={{ background: navbar ? "white" : "" }}
         size={size}
         placeholder={defaultValue}
         onChange={handleChange}
         options={options}
-        bordered={navbar ? false : true}
+        bordered={navbar ? true : true}
       />
     </ConfigProvider>
   );

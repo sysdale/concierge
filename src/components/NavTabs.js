@@ -26,7 +26,7 @@ const NavTabs = ({ tabsList }) => {
         items={tabsList.map((tab) => {
           return {
             label: (
-              <div className="flex">
+              <div className="flex py-3">
                 <div className="flex items-center space-x-2">
                   <div>{tab.svg}</div>
                   <div>{tab.label}</div>

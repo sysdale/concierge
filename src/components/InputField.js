@@ -19,13 +19,13 @@ const InputField = ({
   defaultValue = null,
   bordered = true,
   navbar = false,
+  onChange = null,
   ...props
 }) => {
-  const fieldToken = {};
-
   const typeMap = {
     text: (
       <Input
+        onChange={onChange}
         placeholder={placeholder}
         prefix={iconDirection === "left" ? <Icons iconName={iconName} /> : null}
         suffix={
@@ -33,15 +33,18 @@ const InputField = ({
         }
       />
     ),
-    textarea: <TextAreaField placeholder={placeholder} autosize={true} />,
-    number: <NumberField min={0} defaultValue={0} />,
-    date: <DatePickerField />,
-    tag: <TagField w={props.tagData} placeholder={placeholder} />,
+    textarea: (
+      <TextAreaField placeholder={placeholder} autosize={true} {...props} />
+    ),
+    number: <NumberField min={0} defaultValue={0} {...props} />,
+    date: <DatePickerField {...props} />,
+    tag: <TagField w={props.tagData} placeholder={placeholder} {...props} />,
     dropdown: (
       <DropDownField
         defaultValue={defaultValue}
         dropData={props.dropData}
         navbar={navbar}
+        {...props}
       />
     ),
   };
@@ -49,13 +52,7 @@ const InputField = ({
   return (
     <div className="flex flex-col">
       <div className="text-sm font-normal pb-2.5">{props.children}</div>
-      <ConfigProvider
-        theme={{
-          token: fieldToken,
-        }}
-      >
-        {typeMap[type] || null}
-      </ConfigProvider>
+      <ConfigProvider theme={{}}>{typeMap[type] || null}</ConfigProvider>
     </div>
   );
 };
