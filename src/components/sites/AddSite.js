@@ -1,10 +1,11 @@
 import React from "react";
-const SiteInfo = () => {
+
+const AddSite = () => {
   return (
     <>
       <div className="title-container">
         <div className="card-container">
-          <div className="card-title">
+          <div className="card">
             <div className="card-content">
               <div className="input-row"></div>
               <div className="input-row"></div>
@@ -18,4 +19,4 @@ const SiteInfo = () => {
   );
 };
 
-export default SiteInfo;
+export default AddSite;

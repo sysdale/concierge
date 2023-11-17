@@ -13,8 +13,8 @@ const DatePickerField = () => (
   <ConfigProvider
     theme={{
       token: {
-        colorPrimary: "black",
-        colorPrimaryBg: "#F3F3F3",
+        colorPrimary: "white",
+        colorPrimaryBg: "black",
         addonBg: "red",
       },
     }}

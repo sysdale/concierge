@@ -4,7 +4,7 @@ export { default as Buttonn } from "./dumb/Buttonn";
 export { default as NavBar } from "../components/dumb/NavBar";
 export { default as NavTabs } from "./dumb/NavTabs";
 export { default as Table } from "./dumb/Table";
-export { default as ToggleButton } from "./dumb/ToggleButton";
+// export { default as ToggleButton } from "./dumb/ToggleButton";
 export { default as InputField } from "./dumb/InputField";
 export { default as Icons } from "./dumb/Icons";
 export { default as DropDownField } from "./dumb/DropDownField";
@@ -16,9 +16,10 @@ export { default as StepsBar } from "./dumb/StepsBar";
 export { default as Cardd } from "./dumb/Cardd";
 export { default as RootLayout } from "./pages/RootLayout";
 export { default as MainNavigation } from "./pages/MainNavigation";
-export { default as AddSite } from "./sites/AddSite";
 export { default as AddBooking } from "./bookings/AddBooking";
 export { default as ErrorPage } from "./pages/ErrorPage";
+export { default as SiteInfo } from "./sites/SiteInfo";
+export { default as AddSite } from "./sites/AddSite";
 
 {
   /* <ToggleButton theme={"black_white"} />

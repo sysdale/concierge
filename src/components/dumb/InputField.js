@@ -12,10 +12,11 @@ import {
 const { TextArea } = Input;
 
 const InputField = ({
+  title,
   placeholder,
   type = "text",
   iconName = null,
-  iconDirection = null,
+  iconDirection = "left",
   defaultValue = null,
   bordered = true,
   navbar = false,
@@ -25,7 +26,7 @@ const InputField = ({
   const typeMap = {
     text: (
       <Input
-        onChange={onChange}
+        {...props}
         placeholder={placeholder}
         prefix={iconDirection === "left" ? <Icons iconName={iconName} /> : null}
         suffix={
@@ -50,10 +51,12 @@ const InputField = ({
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="text-sm font-normal pb-2.5">{props.children}</div>
-      <ConfigProvider theme={{}}>{typeMap[type] || null}</ConfigProvider>
-    </div>
+    <>
+      <div className="text-xs">{title}</div>
+      <div className="py-0.7">
+        <ConfigProvider theme={{}}>{typeMap[type] || null}</ConfigProvider>
+      </div>
+    </>
   );
 };
 

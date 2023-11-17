@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Button, ConfigProvider } from "antd";
 
-const Buttonn = ({ theme, icons = null, onClick, ...props }) => {
+const Buttonn = ({
+  theme = "primary",
+  icons = null,
+  onClick = null,
+  ...props
+}) => {
   const buttonThemes = {
     primary: {
       background: "black",
@@ -25,11 +30,18 @@ const Buttonn = ({ theme, icons = null, onClick, ...props }) => {
 
   return (
     <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#363636",
+      theme={
+        ({
+          token: {
+            colorPrimary: "#363636",
+          },
         },
-      }}
+        {
+          components: {
+            Button: { paddingInline: 30 },
+          },
+        })
+      }
     >
       <Button
         disabled={theme === "disabled"}

@@ -1,6 +1,6 @@
 import React from "react";
-import BookingSvg from "../SVGs/BookingSvg";
-import SitesSvg from "../SVGs/SitesSvg";
+import BookingSvg from "../../SVGs/BookingSvg";
+import SitesSvg from "../../SVGs/SitesSvg";
 import {
   DropDownField,
   Buttonn,
