@@ -2,6 +2,7 @@ import React from "react";
 
 import { ConfigProvider, Tabs } from "antd";
 import { tab } from "@testing-library/user-event/dist/tab";
+import { Link } from "react-router-dom";
 
 const NavTabs = ({ tabsList }) => {
   const onChange = (key) => {
@@ -28,8 +29,10 @@ const NavTabs = ({ tabsList }) => {
             label: (
               <div className="flex py-3">
                 <div className="flex items-center space-x-2">
-                  <div>{tab.svg}</div>
-                  <div>{tab.label}</div>
+                  <Link to={`/${tab.navTo}`}>
+                    <div>{tab.svg}</div>
+                    <div>{tab.label}</div>
+                  </Link>
                 </div>
               </div>
             ),

@@ -1,12 +1,19 @@
 import React from "react";
-import BookingSvg from "./SVGs/BookingSvg";
-import SitesSvg from "./SVGs/SitesSvg";
-import { DropDownField, Buttonn, NavTabs, InputField, Icons } from "./index";
+import BookingSvg from "../../SVGs/BookingSvg";
+import SitesSvg from "../../SVGs/SitesSvg";
+import {
+  DropDownField,
+  Buttonn,
+  NavTabs,
+  InputField,
+  Icons,
+} from "../../components/index";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ data }) => {
   const tabsList = [
-    { id: 0, label: "My Sites", svg: <BookingSvg /> },
-    { id: 1, label: "Bookings", svg: <SitesSvg /> },
+    { id: 0, label: "My Sites", svg: <BookingSvg />, navTo: "sites" },
+    { id: 1, label: "Bookings", svg: <SitesSvg />, navTo: "bookings" },
   ];
 
   return (
@@ -14,7 +21,9 @@ const NavBar = ({ data }) => {
       {/* Logo Area */}
       <div className="flex flex-row items-center ">
         <div className="flex items-center text-3xl px-10">
-          <Icons iconName="logo" />
+          <Link to="/sites">
+            <Icons iconName="logo" />
+          </Link>
         </div>
 
         {/* Tabs Area */}

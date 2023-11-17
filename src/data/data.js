@@ -13,3 +13,5 @@ export const dropData = [
     key: "3",
   },
 ];
+
+export const data = ["option1", "option2", "option3"];
