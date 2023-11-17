@@ -7,7 +7,7 @@ import {
   NumberField,
   TextAreaField,
   DatePickerField,
-} from "../components/index.js";
+} from "../index.js";
 
 const { TextArea } = Input;
 

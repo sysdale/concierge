@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { NavBar } from "../index";
-import { data } from "../../data/data";
+import { data } from "../data/data";
 
 function MainNavigation() {
   return (
