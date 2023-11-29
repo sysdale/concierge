@@ -5,7 +5,7 @@ import { MainNavigation } from "../index";
 function RootLayout() {
   return (
     <>
-      <MainNavigation />
+      {/* <MainNavigation /> */}
       <main>
         <Outlet />
       </main>

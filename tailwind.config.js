@@ -15,6 +15,7 @@ module.exports = {
         amberText: "#000000FF",
         greenText: "#117B34FF",
         redText: "#DE3B40FF",
+        lightGrayText: "D9D9D9",
       },
     },
   },

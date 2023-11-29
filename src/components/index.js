@@ -19,7 +19,6 @@ export { default as MainNavigation } from "./pages/MainNavigation";
 export { default as AddBooking } from "./bookings/AddBooking";
 export { default as ErrorPage } from "./pages/ErrorPage";
 export { default as SiteInfo } from "./sites/SiteInfo";
-export { default as AddSite } from "./sites/AddSite";
 
 {
   /* <ToggleButton theme={"black_white"} />
